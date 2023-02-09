@@ -1,8 +1,16 @@
 import React from "react";
 
-function CreateTodoButton() {
+function CreateTodoButton(props) {
+
+    const onClickButton = (msg) => {
+        alert(msg);
+    }
+
     return (
-        <button>+</button>
+        <button
+            className="CreateTodoButton"
+            onClick={() => onClickButton("Create Todo Item")}    
+        >+</button>
     )
 }
 
