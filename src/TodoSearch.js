@@ -1,8 +1,6 @@
 import React from "react";
 
-function TodoSearch() {
-
-    const [searchValue, setSearchValue] = React.useState('');
+function TodoSearch({ searchValue, setSearchValue }) {
 
     const onSearchValueChanged = (event) => {
         console.log(event.target.value);
@@ -10,15 +8,12 @@ function TodoSearch() {
     }
 
     return (
-        <React.Fragment>
-            <input 
-                className="TodoSearch"
-                placeholder="Cebolla"
-                value={searchValue}
-                onChange={onSearchValueChanged}
-            />
-            <p>{ searchValue }</p>
-        </React.Fragment>
+        <input 
+            className="TodoSearch"
+            placeholder="Cebolla"
+            value={searchValue}
+            onChange={onSearchValueChanged}
+        />
     )
 }
 
