@@ -9,7 +9,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 import './App.css';
 
 const todos = [
-  {text: 'Revisar API', completed: false},
+  {text: 'Revisar API', completed: true},
   {text: 'Completar curso de introducción a React', completed: false}
 ]
 
@@ -20,7 +20,7 @@ function App() {
       <TodoSearch />
       <TodoList>
         {todos.map(todo => (
-          <TodoItem key={todo.text} text={todo.text} />
+          <TodoItem key={todo.text} text={todo.text} completed={todo.completed} />
         ))}      
       </TodoList>
       <CreateTodoButton />
