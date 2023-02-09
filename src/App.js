@@ -33,11 +33,11 @@ function App() {
     });
   }
 
-  const completeTodo = (text) => {
+  const toggleTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
 
-    newTodos[todoIndex].completed = true;
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos);
   }
 
@@ -65,7 +65,7 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
+            onComplete={() => toggleTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
         ))}      
